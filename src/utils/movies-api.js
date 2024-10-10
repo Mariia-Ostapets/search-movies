@@ -7,18 +7,11 @@ const BASE_URL = "https://api.themoviedb.org/3";
 
 export async function fetchMovies() {
   const url = `${BASE_URL}/trending/movie/day`;
-
   const options = {
     headers: {
       Authorization: `Bearer ${API_KEY}`,
     },
   };
-
-  try {
-    const response = await axios.get(url, options);
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching movies:", error);
-    throw error;
-  }
+  const response = await axios.get(url, options);
+  return response.data;
 }
