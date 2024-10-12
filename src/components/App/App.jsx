@@ -20,26 +20,27 @@ export default function App() {
       <Navigation />
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-          <Route path="/movies" element={<MoviesPage />}></Route>
-          <Route path="/movies/:movieId" element={<MovieDetailsPage />}></Route>
-          <Route
-            path="cast"
-            element={
-              <Suspense fallback={<div>Loading...</div>}>
-                <MovieCast />
-              </Suspense>
-            }
-          ></Route>
-          <Route
-            path="reviews"
-            element={
-              <Suspense fallback={<div>Loading...</div>}>
-                <MovieReviews />
-              </Suspense>
-            }
-          ></Route>
-          <Route path="*" element={<NotFoundPage />}></Route>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/movies" element={<MoviesPage />} />
+          <Route path="/movies/:movieId" element={<MovieDetailsPage />}>
+            <Route
+              path="cast"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <MovieCast />
+                </Suspense>
+              }
+            />
+            <Route
+              path="reviews"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <MovieReviews />
+                </Suspense>
+              }
+            />
+          </Route>
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </div>

@@ -45,7 +45,13 @@ export default function MoviesPage() {
           Oops, some error occured &quot;{error}&quot;. Please, try again later.
         </p>
       )}
-      {!isLoading && movies.length > 0 && <MovieList movies={movies} />}
+      {!isLoading && movies.length > 0 && (
+        <MovieList
+          movies={movies}
+          from="movies"
+          search={searchParams.toString()}
+        />
+      )}
       {!isLoading && movies.length === 0 && query && <p>No movies found</p>}
     </div>
   );
