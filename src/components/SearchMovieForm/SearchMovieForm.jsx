@@ -36,10 +36,9 @@ export default function SearchMovieForm({ onSearch }) {
           <ErrorMessage
             className={css.errorMessage}
             name="searchTerm"
-            component="span"
+            component="div"
           />
         </label>
-
         <button type="submit">
           Search
           <CiSearch />

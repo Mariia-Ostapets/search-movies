@@ -29,14 +29,42 @@ export default function MovieCast() {
     <div>
       {isLoading && <Loader />}
       {error && <p>Error fetching movie cast: {error}</p>}
-      <h2>Cast</h2>
-      <ul>
-        {cast.map((actor) => (
-          <li key={actor.id}>
-            {actor.name} as {actor.character}
-          </li>
-        ))}
-      </ul>
+      {!isLoading && cast.length === 0 && (
+        <p>We don't have info about cast for this movie.</p>
+      )}
+      {cast.length > 0 && (
+        <ul className={css.castList}>
+          {cast.map((actor) => (
+            <li key={actor.id} className={css.castItem}>
+              {actor.profile_path ? (
+                <img
+                  src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
+                  alt={actor.name || "Actor"}
+                  style={{ width: "100px", height: "150px" }}
+                />
+              ) : (
+                <p
+                  style={{
+                    width: "100px",
+                    height: "150px",
+                    textAlign: "center",
+                  }}
+                >
+                  Image not found
+                </p>
+              )}
+              <div>
+                {actor.name ? (
+                  <p className={css.actorName}>{actor.name}</p>
+                ) : (
+                  <p>Name not found</p>
+                )}
+                <p>Character: {actor.character || "Character not available"}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }

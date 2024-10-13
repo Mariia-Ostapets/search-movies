@@ -15,7 +15,11 @@ export default function MovieReviews() {
       try {
         setIsLoading(true);
         const data = await fetchMovieReviews(movieId);
-        setReviews(data.reviews);
+        if (data && data.results) {
+          setReviews(data.results);
+        } else {
+          setReviews([]);
+        }
       } catch (error) {
         setError(error.message);
       } finally {
@@ -29,17 +33,18 @@ export default function MovieReviews() {
     <div>
       {isLoading && <Loader />}
       {error && <p>Error fetching movie reviews: {error}</p>}
-      <h2>Reviews</h2>
-      {reviews.length > 0 ? (
+      {!isLoading && reviews.length === 0 && (
+        <p>We don't have any reviews for this movie.</p>
+      )}
+      {reviews.length > 0 && (
         <ul>
           {reviews.map((review) => (
             <li key={review.id}>
-              {review.author}: {review.content}
+              <p className={css.reviewAuthorDescr}>Author: {review.author}</p>
+              <p>{review.content}</p>
             </li>
           ))}
         </ul>
-      ) : (
-        <p>No reviews available.</p>
       )}
     </div>
   );

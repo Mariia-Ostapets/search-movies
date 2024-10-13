@@ -1,0 +1,47 @@
+.linkGoBack {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  padding: 4px;
+  transition: color 250ms ease;
+}
+
+.linkGoBack:hover {
+  color: lightcoral;
+}
+
+.movieDetailsContainer {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-bottom: 2px solid lightgrey;
+  padding: 6px 0px;
+}
+
+.movieDetailsInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.movieImage {
+  width: 240px;
+  height: 360px;
+  object-fit: cover;
+}
+
+.additionalInfoTitle {
+  margin-top: 12px;
+  font-weight: 400;
+}
+
+.movieDetailsNav {
+  border-bottom: 1px solid black;
+}

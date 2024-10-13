@@ -25,7 +25,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div>
+    <div className={css.homePageWrapper}>
       <h1>Trending today</h1>
       {isLoading && <Loader />}
       {error && (

@@ -8,7 +8,7 @@ export default function MovieList({ movies, from }) {
   return (
     <ul className={css.movieList}>
       {movies.map((movie) => (
-        <li key={movie.id} className={css.movieItem}>
+        <li key={movie.id}>
           <Link
             to={`/movies/${movie.id}`}
             state={{
@@ -17,7 +17,7 @@ export default function MovieList({ movies, from }) {
             }}
             className={css.movieLink}
           >
-            <h2 className={css.movieTitle}>{movie.title}</h2>
+            <h2>{movie.title}</h2>
           </Link>
         </li>
       ))}
