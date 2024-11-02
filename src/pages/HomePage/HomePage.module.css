@@ -1,3 +1,7 @@
 .homePageWrapper {
   margin: 8px;
 }
+
+.homePageTitle {
+  color: orange;
+}

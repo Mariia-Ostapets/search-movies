@@ -26,7 +26,7 @@ export default function HomePage() {
 
   return (
     <div className={css.homePageWrapper}>
-      <h1>Trending today</h1>
+      <h1 className={css.homePageTitle}>Trending today</h1>
       {isLoading && <Loader />}
       {error && (
         <p>

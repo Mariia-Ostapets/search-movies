@@ -18,10 +18,10 @@
   transition: color 250ms ease;
 }
 
-.link:hover {
-  text-decoration: underline;
-}
+/* .link:hover {
+  color: orange;
+} */
 
 .active {
-  color: red;
+  color: orange;
 }

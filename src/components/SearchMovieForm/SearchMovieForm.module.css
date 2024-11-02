@@ -34,7 +34,7 @@ button {
   align-items: center;
   justify-content: center;
   border-radius: 4px;
-  border: 1px solid #111111;
+  border: 1px solid black;
   padding: 4px;
   font-size: 1em;
   font-weight: 500;
@@ -46,11 +46,11 @@ button {
 }
 input:hover,
 button:hover {
-  border-color: #646cff;
+  border-color: orange;
 }
 input:focus,
 input:focus-visible,
 button:focus,
 button:focus-visible {
-  outline: 4px auto #535bf2;
+  outline: 4px auto orange;
 }
